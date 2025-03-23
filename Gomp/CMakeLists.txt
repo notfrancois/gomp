@@ -11,7 +11,7 @@ target_include_directories(Gomp
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(Gomp PRIVATE ws2_32 OMP-SDK OMP-Network samp-streamer-plugin)
+target_link_libraries(Gomp PRIVATE OMP-SDK OMP-Network samp-streamer-plugin)
 set_target_properties(Gomp PROPERTIES PREFIX "")
 
 if(TARGET_BUILD_ARCH MATCHES "(i[3-6]86|x86)" AND NOT TARGET_BUILD_ARCH MATCHES "(x64|x86_64|amd64)")

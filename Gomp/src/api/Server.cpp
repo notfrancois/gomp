@@ -1,5 +1,6 @@
 #include <gomp/api.hpp>
 #include <gomp/Gomp.hpp>
+#include <cstdarg>
 
 #ifdef __cplusplus
 extern "C"
