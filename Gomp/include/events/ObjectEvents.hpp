@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class ObjectEvents : public ObjectEventHandler, public Singleton<ObjectEvents>
+class GompObjectEvents : public ObjectEventHandler, public Singleton<GompObjectEvents>
 {
 public:
-	ObjectEvents()
+	GompObjectEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

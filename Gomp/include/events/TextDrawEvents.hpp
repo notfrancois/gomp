@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class TextDrawEvents : public TextDrawEventHandler, public Singleton<TextDrawEvents>
+class GompTextDrawEvents : public TextDrawEventHandler, public Singleton<GompTextDrawEvents>
 {
 public:
-	TextDrawEvents()
+	GompTextDrawEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

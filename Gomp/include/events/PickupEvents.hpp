@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class PickupEvents : public PickupEventHandler, public Singleton<PickupEvents>
+class GompPickupEvents : public PickupEventHandler, public Singleton<GompPickupEvents>
 {
 public:
-	PickupEvents()
+	GompPickupEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

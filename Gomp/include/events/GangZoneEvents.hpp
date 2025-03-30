@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class GangZoneEvents : public GangZoneEventHandler, public Singleton<GangZoneEvents>
+class GompGangZoneEvents : public GangZoneEventHandler, public Singleton<GompGangZoneEvents>
 {
 public:
-	GangZoneEvents()
+	GompGangZoneEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

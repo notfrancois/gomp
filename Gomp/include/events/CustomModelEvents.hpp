@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class CustomModelEvents : public PlayerModelsEventHandler, public Singleton<CustomModelEvents>
+class GompCustomModelEvents : public PlayerModelsEventHandler, public Singleton<GompCustomModelEvents>
 {
 public:
-	CustomModelEvents()
+	GompCustomModelEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

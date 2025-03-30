@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class CheckpointEvents : public PlayerCheckpointEventHandler, public Singleton<CheckpointEvents>
+class GompCheckpointEvents : public PlayerCheckpointEventHandler, public Singleton<GompCheckpointEvents>
 {
 public:
-	CheckpointEvents()
+	GompCheckpointEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

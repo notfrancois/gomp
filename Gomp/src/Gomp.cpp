@@ -22,7 +22,7 @@
 #include <events/TextDrawEvents.hpp>
 #include <events/VehicleEvents.hpp>
 #include <events/CustomModelEvents.hpp>
-
+#include <events/StreamerEvents.hpp>
 // Required component methods.
 StringView Gomp::componentName() const {
 	return "Go";
@@ -63,76 +63,82 @@ void Gomp::onInit(IComponentList* components)
 
 	if (actors)
 	{
-		actors->getEventDispatcher().addEventHandler(ActorEvents::Get());
+		actors->getEventDispatcher().addEventHandler(GompActorEvents::Get());
 	}
 
 	if (checkpoints)
 	{
-		checkpoints->getEventDispatcher().addEventHandler(CheckpointEvents::Get());
+		checkpoints->getEventDispatcher().addEventHandler(GompCheckpointEvents::Get());
 	}
 
 	if (classes)
 	{
-		classes->getEventDispatcher().addEventHandler(ClassEvents::Get());
+		classes->getEventDispatcher().addEventHandler(GompClassEvents::Get());
 	}
 
 	if (console)
 	{
-		console->getEventDispatcher().addEventHandler(ConsoleEvents::Get());
+		console->getEventDispatcher().addEventHandler(GompConsoleEvents::Get());
 	}
 
 	if (dialogs)
 	{
-		dialogs->getEventDispatcher().addEventHandler(DialogEvents::Get());
+		dialogs->getEventDispatcher().addEventHandler(GompDialogEvents::Get());
 	}
 
 	if (gangzones)
 	{
-		gangzones->getEventDispatcher().addEventHandler(GangZoneEvents::Get());
+		gangzones->getEventDispatcher().addEventHandler(GompGangZoneEvents::Get());
 	}
 
 	if (menus)
 	{
-		menus->getEventDispatcher().addEventHandler(MenuEvents::Get());
+		menus->getEventDispatcher().addEventHandler(GompMenuEvents::Get());
 	}
 
 	if (objects)
 	{
-		objects->getEventDispatcher().addEventHandler(ObjectEvents::Get());
+		objects->getEventDispatcher().addEventHandler(GompObjectEvents::Get());
 	}
 
 	if (pickups)
 	{
-		pickups->getEventDispatcher().addEventHandler(PickupEvents::Get());
+		pickups->getEventDispatcher().addEventHandler(GompPickupEvents::Get());
 	}
 
 	if (players)
 	{
-		players->getPlayerSpawnDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerConnectDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerStreamDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerTextDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerShotDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerChangeDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerDamageDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerClickDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerCheckDispatcher().addEventHandler(PlayerEvents::Get());
-		players->getPlayerUpdateDispatcher().addEventHandler(PlayerEvents::Get());
+		players->getPlayerSpawnDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerConnectDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerStreamDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerTextDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerShotDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerChangeDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerDamageDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerClickDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerCheckDispatcher().addEventHandler(GompPlayerEvents::Get());
+		players->getPlayerUpdateDispatcher().addEventHandler(GompPlayerEvents::Get());
 	}
 
 	if (textdraws)
 	{
-		textdraws->getEventDispatcher().addEventHandler(TextDrawEvents::Get());
+		textdraws->getEventDispatcher().addEventHandler(GompTextDrawEvents::Get());
 	}
 
 	if (vehicles)
 	{
-		vehicles->getEventDispatcher().addEventHandler(VehicleEvents::Get());
+		vehicles->getEventDispatcher().addEventHandler(GompVehicleEvents::Get());
 	}
 
 	if (models)
 	{
-		models->getEventDispatcher().addEventHandler(CustomModelEvents::Get());
+		models->getEventDispatcher().addEventHandler(GompCustomModelEvents::Get());
+	}
+
+	if (streamer)
+	{
+		streamer->getEventDispatcher().addEventHandler(StreamerEvents::Get()); // check whether this is correct
+		streamer->onInit(components); // don't miss this LMAO
 	}
 }
 

@@ -7,10 +7,10 @@
 #include <gomp/Gamemode.hpp>
 #include <gomp/api.hpp>
 
-class ConsoleEvents : public ConsoleEventHandler, public Singleton<ConsoleEvents>
+class GompConsoleEvents : public ConsoleEventHandler, public Singleton<GompConsoleEvents>
 {
 public:
-	ConsoleEvents()
+	GompConsoleEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

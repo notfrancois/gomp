@@ -6,10 +6,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class DialogEvents : public PlayerDialogEventHandler, public Singleton<DialogEvents>
+class GompDialogEvents : public PlayerDialogEventHandler, public Singleton<GompDialogEvents>
 {
 public:
-	DialogEvents()
+	GompDialogEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}

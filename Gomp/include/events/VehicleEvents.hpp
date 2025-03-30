@@ -4,10 +4,10 @@
 #include <gomp/Singleton.hpp>
 #include <gomp/Gamemode.hpp>
 
-class VehicleEvents : public VehicleEventHandler, public Singleton<VehicleEvents>
+class GompVehicleEvents : public VehicleEventHandler, public Singleton<GompVehicleEvents>
 {
 public:
-	VehicleEvents()
+	GompVehicleEvents()
 	{
 		gamemode_ = Gamemode::Get();
 	}
